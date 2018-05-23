@@ -123,8 +123,14 @@ hybird_app_helper = {
                         fileEntry.createWriter(function (fileWriter) {
 
                             fileWriter.onwriteend = function () {
-                                alert("Successful file read...");
-                                window.plugins.socialsharing.share(_filename, null, "cdvfile://localhost/temporary/" + _filename);
+                                alert("Successful file read..." + "cdvfile://localhost/temporary/" + _filename);
+                                resolveLocalFileSystemURL("cdvfile://localhost/temporary/" + _filename, function(entry) {
+                                    var nativePath = entry.toURL();
+                                    alert('Native URI: ' + nativePath);
+                                    //document.getElementById('video').src = nativePath;
+                                    window.plugins.socialsharing.share(_filename, "description", nativePath);
+                                });
+                                
                             };
 
                             fileWriter.onerror = function (e) {
