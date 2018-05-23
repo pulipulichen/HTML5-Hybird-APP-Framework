@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <!-- Configuration Start: Please customize following configuration -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="phonegap-loading-test.pulipuli.info" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="hybrid-app.pulipuli.info" version="1.0.0">
     
-    <name>LOADING TEST</name>
+    <name>Hybird APP</name>
     <description>
-        A client loading test webpage tool.
+        A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap (mobile application).
     </description>
     <author href="http://blog.pulipuli.info" email="pulipuli.chen@gmail.com">布丁布丁吃布丁</author>
     <!-- Configuration End -->
@@ -14,7 +14,7 @@
     <access origin="*"/>
     <allow-navigation href="*" />
   
-    <content src="loading-test/index.html"/>
+    <content src="index.html"/>
     <icon src="icon.png"/>
   
     <!-- https://build.phonegap.com/current-support -->

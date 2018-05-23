@@ -1,9 +1,5 @@
 var _controllers_list = [
     "main_page",
-    "request_config",
-    "job_result",
-    "request_result",
-    "sliding_menu",
     "about"
 ];
 
