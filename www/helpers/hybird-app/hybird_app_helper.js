@@ -137,7 +137,7 @@ hybird_app_helper = {
                                 alert("Failed file read: " + e.toString());
                             };
                             try {
-                                var blob = _this.cordovaB64toBlob(_content, _filename, _mime);
+                                var blob = _this.cordovaB64toBlob(_content, _mime);
                                 fileWriter.write(blob);
                             }catch(e){alert(e)}
                         });
