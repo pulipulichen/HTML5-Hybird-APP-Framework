@@ -18,7 +18,8 @@ module.exports = {
                 }
 
                 // fileName is a string that contains the path and filename created in the save file dialog.  
-                fs.writeFile(fileName, _content, 'base64');
+                fs.writeFileSync(fileName, _content, 'base64');
+                shell.openItem(fileName);
             });
         }); // ipcMain.on('save-file', (event, arg)=> {
 
