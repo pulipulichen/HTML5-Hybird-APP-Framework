@@ -2,10 +2,11 @@
 A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap Build (mobile application).
 
 ISSUES: https://github.com/pulipulichen/electron-loading-test/issues
+![Alt text](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
 
 # 編譯檔成果下載
 - Windows x64: https://drive.google.com/open?id=1w_fEdw5w5etIYKPDI4PcGn3tYEHipr9e
-- Mobile APP: https://build.phonegap.com/apps/3170327/install 
+- Mobile APP: https://build.phonegap.com/apps/3173248/install  https://bit.ly/2KOyDVp
 - Mobile APP Homepage: https://build.phonegap.com/apps/3170327/share
 
 # 安裝electron相關套件
