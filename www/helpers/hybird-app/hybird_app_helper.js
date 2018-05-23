@@ -128,7 +128,7 @@ hybird_app_helper = {
                                     var nativePath = entry.toURL();
                                     //alert('Native URI: ' + nativePath);
                                     //document.getElementById('video').src = nativePath;
-                                    window.plugins.socialsharing.share(_filename, "description", nativePath);
+                                    window.plugins.socialsharing.share(_filename, _filename, nativePath);
                                 });
                                 
                             };

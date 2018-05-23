@@ -20,7 +20,8 @@ main_page = {
             var _data = {
                 'global': {
                     "version": CONFIG.version,
-                    "author": "布丁布丁吃布丁"
+                    "author": "布丁布丁吃布丁",
+                    "time": PULI_UTILS.get_yyyymmdd_hhmm(),
                 },
                 'data': [
                     {
