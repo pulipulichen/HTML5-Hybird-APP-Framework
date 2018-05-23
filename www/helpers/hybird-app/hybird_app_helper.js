@@ -10,9 +10,11 @@ hybird_app_helper = {
         else {
             this.platform = "web";
         }
-        $(function () {
-            $("body").addClass("platform-" + this.platform);
-        });
+        var _this;
+        setTimeout(function () {
+            document.body.classList.add("platform-" + _this.platform);
+        }, 1);
+        
     },
     /**
      * @author https://stackoverflow.com/a/13252184
