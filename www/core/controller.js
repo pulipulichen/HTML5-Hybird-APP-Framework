@@ -59,9 +59,12 @@ hybird_controller = {
             }
 
             vue_create_event();
-            _this.detect_platform();
+            
             //_backspace_bind();
             document.title = i18n.t("TITLE");
+            setTimeout(function () {
+                hybird_controller.detect_platform();
+            }, 0);
         });
     },
     controllers: {},
@@ -92,7 +95,7 @@ hybird_controller = {
             } else {
                 //console.log("ok 1");
                 _this.build_vue_setting(function (_vue_setting) {
-                    console.log(_vue_setting);
+                    //console.log(_vue_setting);
                     vm = new Vue(_vue_setting);
                 });
             }
@@ -101,7 +104,51 @@ hybird_controller = {
         _loop(0);
     },
     detect_platform: function () {
-        
+        var _platform = vm.$ons.platform;
+        var _body = $("body");
+        var _classname_prefix = "platform-";
+        if (_platform.isIPhone() || _platform.isIPhoneX()) {
+            _body.addClass(_classname_prefix + "iphone");
+        }
+        if (_platform.isIPad()) {
+            _body.addClass(_classname_prefix + "ipad");
+        }
+        if (_platform.isIOS()) {
+            _body.addClass(_classname_prefix + "ios");
+        }
+        if (_platform.isIOSSafari()) {
+            _body.addClass(_classname_prefix + "ios-safari");
+        }
+        if (_platform.isAndroidPhone()) {
+            _body.addClass(_classname_prefix + "android-phone");
+        }
+        if (_platform.isAndroidTablet()) {
+            _body.addClass(_classname_prefix + "android-tablet");
+        }
+        if (_platform.isAndroid()) {
+            _body.addClass(_classname_prefix + "android");
+        }
+        if (_platform.isBlackBerry()) {
+            _body.addClass(_classname_prefix + "black-berry");
+        }
+        if (_platform.isOpera()) {
+            _body.addClass(_classname_prefix + "opera");
+        }
+        if (_platform.isFirefox()) {
+            _body.addClass(_classname_prefix + "firefox");
+        }
+        if (_platform.isSafari()) {
+            _body.addClass(_classname_prefix + "safari");
+        }
+        if (_platform.isChrome()) {
+            _body.addClass(_classname_prefix + "chrome");
+        }
+        if (_platform.isIE()) {
+            _body.addClass(_classname_prefix + "ie");
+        }
+        if (_platform.isEdge()) {
+            _body.addClass(_classname_prefix + "edge");
+        }
     }
 };
 
