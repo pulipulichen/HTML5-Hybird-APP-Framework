@@ -114,10 +114,10 @@ hybird_app_helper = {
                     });
                 });
                 */
-                _filename = "test.txt";
+                //_filename = "test.txt";
                 window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
-                    alert('file system open: ' + cordova.file.cacheDirectory);
+                    //alert('file system open: ' + cordova.file.cacheDirectory);
                     fs.root.getFile(_filename, {create: true, exclusive: false}, function (fileEntry) {
                         // Create a FileWriter object for our FileEntry (log.txt).
                         fileEntry.createWriter(function (fileWriter) {
@@ -137,7 +137,8 @@ hybird_app_helper = {
                                 alert("Failed file read: " + e.toString());
                             };
                             try {
-                                fileWriter.write("1212");
+                                var blob = _this.b64toFile(_content, _filename, _mime);
+                                fileWriter.write(blob);
                             }catch(e){alert(e)}
                         });
                     });
