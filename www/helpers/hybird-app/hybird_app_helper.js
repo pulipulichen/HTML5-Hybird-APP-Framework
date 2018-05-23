@@ -13,7 +13,8 @@ hybird_app_helper = {
         var _class_name = "platform-" + this.platform;
         setTimeout(function () {
             document.body.classList.add(_class_name);
-        }, 1000);
+        }, 0);
+        return this.platform;
     },
     /**
      * @author https://stackoverflow.com/a/13252184
@@ -175,8 +176,9 @@ hybird_app_helper = {
         ipcRenderer.send('get_item', _key, _callback_id);
     },
 };
-
+/*
 setTimeout(function () {
     hybird_app_helper.detect_mode();
     navigator.notification.alert("0106");
 }, 0);
+*/

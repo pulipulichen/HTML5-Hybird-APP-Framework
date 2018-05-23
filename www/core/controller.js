@@ -64,6 +64,7 @@ hybird_controller = {
     },
     controllers: {},
     ready: function () {
+        
         var _this = this;
         var _loop = function (_i) {
             if (_i < CONFIG.controllers.length) {
@@ -99,4 +100,12 @@ hybird_controller = {
     }
 };
 
-hybird_controller.ready();
+if (hybird_app_helper.detect_mode() === "mobile") {
+    document.addEventListener("deviceready",function () {
+        alert("READY");
+        hybird_controller.ready();
+    }, false);
+}
+else {
+    hybird_controller.ready();
+}
