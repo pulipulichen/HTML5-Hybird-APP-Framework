@@ -1,4 +1,8 @@
 CONFIG = {
     version: "20180523",
-    locate: "zh-tw",
+    locale: "zh-tw",
+    controllers: [
+        "main_page",
+        "about"
+    ]
 };

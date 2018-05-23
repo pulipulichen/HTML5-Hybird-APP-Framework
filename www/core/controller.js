@@ -1,7 +1,4 @@
-var _controllers_list = [
-    "main_page",
-    "about"
-];
+var _controllers_list = CONFIG.controllers;
 
 // ---------------------------
 
@@ -48,24 +45,6 @@ var _vue_create = function () {
     });
 };
 
-var _vue_ready = function (_vue_setting) {
-    
-    //console.log(_first_controller);
-    
-    /*
-    for (var _name in _controllers) {
-        var _controller = _controllers[_name];
-        eval(_name + "_vm = _controller");
-        //eval(_name + "_vm = new Vue(_controller)");
-        //console.log("const " + _name + "_vm = new Vue(_controller)");
-        //eval("const " + _name + "_vm = new Vue(_controller)");
-    }
-    */
-    
-    
-    vm = new Vue(_vue_setting);
-};
-
 // ---------------------------
 
 var _controllers = {};
@@ -77,26 +56,7 @@ var _loop = function (_i) {
         //console.log(_name);
         $.getScript("controllers/" + _name + ".js", function () {
             $.get("controllers/" + _name + ".html", function (_template) {
-                /*
-                var _data = {};
-                try {
-                    eval("var _data = " + _name + "_data");
-                }
-                catch (_e) {}
                 
-                var _methods = {};
-                try {
-                    eval("var _methods = " + _name + "_methods");
-                }
-                catch (_e) {}
-
-                _controllers[_name] = {
-                    key: _name,
-                    template: _template,
-                    data: _data,
-                    methods: _methods
-                };
-                */
                 var _vm = {};
                 try {
                     eval("var _vm = " + _name);
@@ -116,7 +76,7 @@ var _loop = function (_i) {
         //console.log("ok 1");
         _build_vue_setting(function (_vue_setting) {
             //console.log("ok");
-            _vue_ready(_vue_setting);
+            vm = new Vue(_vue_setting);
         });
     }
 };

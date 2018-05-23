@@ -4,7 +4,7 @@
   "description": "Hybird APP Framework",
   "main": "index.js",
   "scripts": {
-    "package-mac": "electron-packager . hybird-app --ignore=node_modules/electron-* --icon=img/icon.png --platform=win32 --arch=x64 --version=1.0.2",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=img/icon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . hybird-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=img/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",    
     "package-linux": "electron-packager . hybird-app --overwrite --asar=true --platform=linux --arch=x64 --icon=img/icon.png --prune=true --out=release-builds"
     "package": "asar pack hybird-app-win32-x64/resources/app hybird-app-win32-x64/resources/app.asar && rm -rf hybird-app-win32-x64/resources/app"

@@ -21,7 +21,9 @@ ISSUES: https://github.com/pulipulichen/electron-loading-test/issues
 
 請務必確認JSON格式是否正確：使用JSONLint驗證 http://jsonlint.com/
 
-ICON設定請以PNG格式、Base64編碼。使用BASE64 IMAGE轉換圖片格式：https://www.base64-image.de/
+ICON設定請以PNG格式、Base64編碼。
+- 使用BASE64 IMAGE轉換圖片格式：https://www.base64-image.de/
+- PNG to ICNS (Mac OS icon format): https://iconverticons.com/online/
 
 openDevTools決定是否預設開啟偵錯工具
 
