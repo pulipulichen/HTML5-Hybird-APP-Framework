@@ -1,4 +1,4 @@
-electron_helper = {
+hybird_app_helper = {
     open_window: function (_link, _target) {
         if (_target === undefined) {
             _target = "_blank";
