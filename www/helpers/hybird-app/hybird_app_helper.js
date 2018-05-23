@@ -116,7 +116,7 @@ hybird_app_helper = {
                 */
                 window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
-                    alert('file system open: ' + fs.name);
+                    alert('file system open: ' + window.TEMPORARY);
                     fs.root.getFile(_filename, {create: true, exclusive: false}, function (fileEntry) {
                         // Create a FileWriter object for our FileEntry (log.txt).
                         fileEntry.createWriter(function (fileWriter) {
@@ -131,7 +131,7 @@ hybird_app_helper = {
                             };
                             try {
                                 fileWriter.write("1212");
-                                window.plugins.socialsharing.share(null, _filename, fs.name + "/newTempFile.txt");
+                                window.plugins.socialsharing.share(_filename, null, window.TEMPORARY + _filename);
                             }catch(e){alert(e)}
                         });
                     });
