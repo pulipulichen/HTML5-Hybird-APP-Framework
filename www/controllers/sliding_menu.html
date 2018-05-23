@@ -1,6 +1,9 @@
 <v-ons-splitter-side
     collapse="portrait" side="left"
     id="sliding_menu"
+    open-threshold="0.5"
+    width="250px"
+    swipe-target-width="200px"
     swipeable
     v-bind:class="{opened: sliding_menu.data.opened}"
     @modechange="sliding_menu.methods.modechange(event.mode)"

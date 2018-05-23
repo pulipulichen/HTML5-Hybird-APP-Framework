@@ -1,5 +1,5 @@
 # HTML5-Hybird-APP-Framework
-A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap (mobile application).
+A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap Build (mobile application).
 
 ISSUES: https://github.com/pulipulichen/electron-loading-test/issues
 
