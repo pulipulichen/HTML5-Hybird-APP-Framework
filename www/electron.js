@@ -4,6 +4,7 @@ const osTmpdir = require('os-tmpdir');
 let mainWindow;
 
 function createWindow () {
+    //_alert("B");
     if (process.argv.length < 2) {
         dialog.showMessageBox({ type: 'info', buttons: ["OK"], message: "Lost Configuration JSON file Parameter" }
             , function (buttonIndex) {
@@ -120,6 +121,11 @@ app.on('activate', function () {
         createWindow();
     }
 });
+
+_alert = function (_msg) {
+    dialog.showMessageBox({ type: 'info', buttons: ["OK"], message: _msg });
+};
+
 
 // ---------------------------------------------
 

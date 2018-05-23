@@ -1,2 +1,2 @@
 cd %~dp0
-node package.js
+start /B node package.js
