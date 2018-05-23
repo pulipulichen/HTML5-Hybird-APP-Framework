@@ -95,7 +95,7 @@ hybird_app_helper = {
                 saveAs(_content, _filename);
                 break;
             case 'electron':
-                ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content));
+                ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content);
                 break;
         }
     },
@@ -125,6 +125,6 @@ hybird_app_helper = {
     }
 };
 
-$(function () {
+setTimeout(function () {
     hybird_app_helper.detect_mode();
-});
+}, 0);

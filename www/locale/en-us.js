@@ -10,6 +10,7 @@
     "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     "longDays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     
+    "TITLE": "Hybird APP",
     "Hybird APP": "Hybird APP",,
     "Share: JSON to ODS": "Share: JSON to ODS"
 }

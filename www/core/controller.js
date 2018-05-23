@@ -42,6 +42,7 @@ var _vue_create = function () {
         }
 
         vue_create_event();
+        document.title = i18n.t("TITLE");
     });
 };
 

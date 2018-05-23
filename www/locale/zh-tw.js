@@ -10,6 +10,7 @@
     "shortDays": ["日", "一", "二", "三", "四", "五", "六"],
     "longDays": ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
     
+    "TITLE": "混合應用程式",
     "Hybird APP": "混合應用程式",
     "Share: JSON to ODS": "分享：JSON轉ODS",
     "This is a next page.": "這是下一頁"
