@@ -25,16 +25,12 @@ function createWindow () {
 
     var url = config.URL;
 
-    var icon_base64 = config.icon;
-    icon_base64 = icon_base64.replace(/^data:image\/png;base64,/, "");
-    var icon_path = osTmpdir() + "/webapp-wrapper-icon-" + url.replace(/[^A-Za-z]/g, "") + ".png";
-    fs.writeFileSync(icon_path, icon_base64, 'base64');
-    config.icon = icon_path;
+    config.icon = "resources/app/"  + config.icon;
 
     mainWindow = new BrowserWindow(config);
     //mainWindow.loadURL(url);
     mainWindow.$ = mainWindow.jQuery = require("./lib/jquery/jquery.min.js");
-    mainWindow.loadURL('file://' + __dirname + '/loading-test/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
     
     mainWindow.on('closed', function () {
         mainWindow = null;
@@ -42,7 +38,7 @@ function createWindow () {
     });
     
     // Tray
-    appIcon = new Tray(icon_path)
+    appIcon = new Tray(config.icon)
     const contextMenu = Menu.buildFromTemplate([
         {label: 'Quit', type: 'radio', click: function () {
             app.quit();
@@ -50,16 +46,6 @@ function createWindow () {
     ]);
     contextMenu.items[(contextMenu.items.length-1)].checked = false;
     appIcon.setContextMenu(contextMenu);
-
-    /*
-    mainWindow.on('app-command', (e, cmd) => {
-      // Navigate the window back when the user hits their mouse back button
-       dialog.showMessageBox({ type: 'info', buttons: buttons, message: typeof(e) });
-      if (cmd === 'browser-backward' && win.webContents.canGoBack()) {
-        mainWindow.webContents.goBack()
-      }
-    })
-*/
 
     if (config.openDevTools === true) {
         mainWindow.webContents.openDevTools();

@@ -2,7 +2,7 @@
   "name": "hybird-app",
   "version": "0.0.1",
   "description": "Hybird APP Framework",
-  "main": "index.js",
+  "main": "electron.js",
   "scripts": {
     "package-win": "electron-packager . hybird-app --overwrite --ignore=node_modules/electron-* --platform=win32 --arch=x64 --version=1.0.2",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=img/icon.icns --prune=true --out=release-builds",
