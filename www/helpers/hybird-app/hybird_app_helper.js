@@ -114,7 +114,7 @@ hybird_app_helper = {
                     });
                 });
                 */
-                //_filename = "test.txt";
+                _filename = "test0241.ods";
                 window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
                     //alert('file system open: ' + cordova.file.cacheDirectory);
