@@ -53,9 +53,51 @@ hybird_app_helper = {
     console_log: function (_msg) {
         console.log(_msg);
     },
-    save_as: function (_filename, _content) {
-        this.console_log([_filename, _content]);
-        saveAs(_content, _filename);
+    mode: 'web',
+    detect_mode: function () {
+        if (ELECTRON_ENABLE === true) {
+            this.mode = 'electron';
+        }
+        else if (this.isPhoneGap()) {
+            this.mode = 'mobile';
+        }
+    },
+    setup_mode: function () {
+        if (ELECTRON_ENABLE === true) {
+            this.mode = 'electron';
+        }
+        else {
+            this.mode = 'web';
+        }
+    },
+    /**
+     * @author https://stackoverflow.com/a/13252184
+     * @returns {Boolean}
+     */
+    isPhoneGap: function () {
+        return (window.cordova || window.PhoneGap || window.phonegap) 
+        && /^file:\/{3}[^\/]/i.test(window.location.href) 
+        && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent);
+    },
+    /**
+     * 
+     * @param {type} _filename
+     * @param {type} _content Base64 format
+     * @param {type} _mime
+     * @param {type} _filters for Electron
+     * @returns {undefined}
+     */
+    save_as: function (_filename, _content, _mime, _filters) {
+        //this.console_log([_filename, _content]);
+        switch (this.mode) {
+            case 'web': 
+                var blob = this.b64toFile(_content, _filename, _mime);
+                saveAs(_content, _filename);
+                break;
+            case 'electron':
+                ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content));
+                break;
+        }
     },
 
     /**
@@ -82,3 +124,7 @@ hybird_app_helper = {
         return file;
     }
 };
+
+$(function () {
+    hybird_app_helper.detect_mode();
+});

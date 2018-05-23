@@ -34,8 +34,17 @@ main_page = {
                 ]
             };
             var _content = xlsx_helper_create("ods", _filename, _data);
-            var blob = hybird_app_helper.b64toFile(_content, _filename, "application/vnd.oasis.opendocument.spreadsheet");
-            hybird_app_helper.save_as(_filename, blob);
+            
+            var _filters = [
+                {
+                    name: "Open Document Spreadsheet",
+                    extensions: ["ods"]
+                }
+            ];
+            
+            var _mime = "application/vnd.oasis.opendocument.spreadsheet";
+            
+            hybird_app_helper.save_as(_filename, _content, _mime, _filters);
         }
     }
 };
