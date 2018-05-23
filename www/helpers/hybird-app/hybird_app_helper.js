@@ -1,7 +1,7 @@
 hybird_app_helper = {
     platform: 'web',
     detect_mode: function () {
-        if (this.electron.is_electron() === true) {
+        if (this.electron.enable === true) {
             this.platform = 'electron';
         }
         else if (this.cordova.isPhoneGap()) {
@@ -17,7 +17,8 @@ hybird_app_helper = {
         return this.platform;
     },
     electron: {
-        is_electron: function () {
+        enable: false,
+        setup_electron: function () {
             try {
                 window.nodeRequire = require;
                 //delete window.require;
@@ -25,6 +26,7 @@ hybird_app_helper = {
                 delete window.module;
                 electron = require('electron');
                 ipcRenderer = electron.ipcRenderer;
+                this.enable = true;
                 return true;
             } catch (_e) {
                 return false;
@@ -224,3 +226,4 @@ setTimeout(function () {
     alert("0106");
 }, 0);
 */
+hybird_app_helper.electron.setup_electron();

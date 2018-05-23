@@ -8,14 +8,16 @@ shell.cd('../www/');
 if (process.platform === "win32") {
     var _dir_name = "hybird-app-win32-x64";
     
-    shell.rm("-rf", _dir_name);
+    //shell.rm("-rf", _dir_name);
+    shell.rm("-rf", "../electron-dist/" + _app_name);
+    
     shell.exec('npm run package-win');
-    shell.cp("-R", "electron-config.json", _dir_name);
+    shell.cp("-R", "electron-config.json", "../electron-dist/" + _app_name + "/" + _dir_name);
 
     // 移動
-    shell.rm("-rf", "../electron-dist/" + _app_name);
-    shell.mkdir("-p", "../electron-dist/" + _app_name);
-    shell.mv("-f", _dir_name, "../electron-dist/" + _app_name);
+    //shell.rm("-rf", "../electron-dist/" + _app_name);
+    //shell.mkdir("-p", "../electron-dist/" + _app_name);
+    //shell.mv("-f", _dir_name, "../electron-dist/" + _app_name);
     shell.cd("../electron-dist/" + _app_name);
     shell.cp("-R", "../../dev-bin/autoit/hybird-app.exe", "./");
 
