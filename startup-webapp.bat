@@ -1,3 +1,3 @@
 @echo off
-cd src\webapp-wrapper-win32-x64
-start /B webapp-wrapper.exe ..\..\webapp-config.json
+cd dist\hybrid-app-win32-x64
+start /B hybrid-app.exe ..\..\electron-config.json
