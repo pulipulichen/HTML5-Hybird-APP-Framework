@@ -87,22 +87,27 @@ hybird_app_helper = {
             case 'mobile':
                 //cordova.file.cacheDirectory
                 
-                var _filepath = cordova.file.cacheDirectory  + "/" + _filename;
+                var _filepath = cordova.file.cacheDirectory  + _filename;
                 alert(_filepath);
                 window.resolveLocalFileSystemURL(cordova.file.cacheDirectory , function (dir) {
                     //console.log("got main dir",dir);
-                    alert(2);
+                    //alert(2);
                     dir.getFile(_filename, {create: true}, function (file) {
-                        alert(3);
+                        //alert(3);
                         //console.log("got the file", file);
                         file.createWriter(function (fileWriter) {
                             alert(4);
-                            var blob = _this.b64toFile(_content, _filename, _mime);
-                            alert(5);
-                            fileWriter.write(blob);
-                            alert(6);
-                            window.plugins.socialsharing.share(_filename, null, _filepath);
-                            alert(7);
+                            try {
+                                var blob = _this.b64toFile(_content, _filename, _mime);
+                                alert(5);
+                                fileWriter.write(blob);
+                                alert(6);
+                                window.plugins.socialsharing.share(_filename, null, _filepath);
+                                alert(7);
+                            }
+                            catch (e) {
+                                alert(e);
+                            }
                         });
                     });
                 });
