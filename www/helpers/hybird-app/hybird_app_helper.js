@@ -87,9 +87,9 @@ hybird_app_helper = {
             case 'mobile':
                 //cordova.file.cacheDirectory
                 
-                var _filepath = cordova.file.tempDirectory + "/" + _filename;
+                var _filepath = cordova.file.cacheDirectory  + "/" + _filename;
                 alert(_filepath);
-                window.resolveLocalFileSystemURL(cordova.file.tempDirectory, function (dir) {
+                window.resolveLocalFileSystemURL(cordova.file.cacheDirectory , function (dir) {
                     //console.log("got main dir",dir);
                     alert(2);
                     dir.getFile(_filename, {create: true}, function (file) {
