@@ -65,17 +65,26 @@ ons-list-item ons-select {
     vertical-align: top !important;
 }
 
+/*
 ons-list-item > .left {
     border-bottom: 1px solid #ccc;
     width: 9rem;
 }
+*/
 
 ons-list-item > .left.icon {
     width: auto;
 }
 
+ons-list-item {
+    padding-right: 14px !important;
+}
+
 .align-right {
     text-align: right;
+}
+.align-center {
+    text-align: center !important;
 }
 
 .invisible {

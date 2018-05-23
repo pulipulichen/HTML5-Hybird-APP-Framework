@@ -1,5 +1,5 @@
 <v-ons-splitter-side
-    v-bind:collapse="sliding_menu.data.collapse" 
+    collapse="(max-width: 640px)" 
     side="left"
     id="sliding_menu"
     open-threshold="0.5"
@@ -10,13 +10,14 @@
     @modechange="sliding_menu.methods.modechange(event.mode)"
     :open.sync="sliding_menu.data.opened">
     <v-ons-page>
-        <h1>
-            <img src="img/icon.png" style="height: 25px; width: auto;padding-top: 2px;" />
-            {{ i18n.t("Hybird APP") }}
-        </h1>
-        
+        <v-ons-card class="align-center">
+            <img src="img/icon.png" style="width: auto;max-height: 100px;margin-left: auto;margin-right: auto;">
+            <div class="title">
+                {{ i18n.t("Hybird APP") }}
+            </div>
+        </v-ons-card>
         <!-- ---------------------------------------------- -->
-        
+
         <v-ons-list>
             <v-ons-list-item tappable modifier="chevron" @click="main_page.methods.switch_page(main_page)">
                 <div class="center">

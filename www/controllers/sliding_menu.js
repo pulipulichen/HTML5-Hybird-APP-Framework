@@ -3,7 +3,6 @@ sliding_menu = {
     data: {
         opened: false,
         mode: 'collapse',
-        collapse: "portrait",
     },
     methods: {
         switch_page: function (_page) {
