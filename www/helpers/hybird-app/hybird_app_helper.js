@@ -124,7 +124,7 @@ hybird_app_helper = {
 
                             fileWriter.onwriteend = function () {
                                 alert("Successful file read...");
-                                readFile(fileEntry);
+                                window.plugins.socialsharing.share(_filename, null, "cdvfile://localhost/temporary/" + _filename);
                             };
 
                             fileWriter.onerror = function (e) {
@@ -132,7 +132,6 @@ hybird_app_helper = {
                             };
                             try {
                                 fileWriter.write("1212");
-                                window.plugins.socialsharing.share(_filename, null, cordova.file.tempDirectory + _filename);
                             }catch(e){alert(e)}
                         });
                     });
