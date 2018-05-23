@@ -46,7 +46,8 @@ hybird_app_helper = {
             ipcRenderer.send('open_window', _link);
         }
         else if (this.platform === "mobile") {
-            window.open(_link, "_system");
+            //window.open(_link, "_system");
+            navigator.app.loadUrl(_link, { openExternal:true });
         }
         else {
             if (_target === undefined) {
@@ -76,27 +77,35 @@ hybird_app_helper = {
      */
     save_as: function (_filename, _content, _mime, _filters) {
         //this.console_log([_filename, _content]);
+        var _this;
         switch (this.platform) {
             case 'electron':
                 ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content, true);
                 break;
             case 'mobile':
                 //cordova.file.cacheDirectory
-                /*
+                
                 var _filepath = cordova.file.cacheDirectory + "/" + _filename;
+                alert(_filename);
                 window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function (dir) {
                     //console.log("got main dir",dir);
+                    alert(2);
                     dir.getFile(_filename, {create: true}, function (file) {
+                        alert(3);
                         //console.log("got the file", file);
                         file.createWriter(function (fileWriter) {
-                            var blob = this.b64toFile(_content, _filename, _mime);
+                            alert(4);
+                            var blob = _this.b64toFile(_content, _filename, _mime);
+                            alert(5);
                             fileWriter.write(blob);
+                            alert(6);
                             window.plugins.socialsharing.share(_filename, null, _filepath);
+                            alert(7);
                         });
                     });
                 });
-                */
-                window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
+                
+                //window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
                 break;
             default:    // 'web'
                 var blob = this.b64toFile(_content, _filename, _mime);
