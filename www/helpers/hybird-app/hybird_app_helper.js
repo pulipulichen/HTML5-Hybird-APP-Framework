@@ -47,7 +47,8 @@ hybird_app_helper = {
         }
         else if (this.platform === "mobile") {
             //window.open(_link, "_system");
-            navigator.app.loadUrl(_link, { openExternal:true });
+            //navigator.app.loadUrl(_link, { openExternal:true });
+            cordova.InAppBrowser.open(_link, "_system");
         }
         else {
             if (_target === undefined) {
