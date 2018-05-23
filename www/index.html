@@ -1,56 +1,54 @@
 <!DOCTYPE html>
+<!-- https://semantic-ui.com/elements/input.html -->
 <html>
     <head>
-        <!-- Configuration Start: Please customize following configuration -->
-        <title>布丁布丁吃什麼？</title>
-        <!-- Configuration End -->
+        <title>LOADING TEST</title>
         <meta charset="UTF-8">
+        <script type="text/javascript" src="lib/electron/electron-node-integration.js"></script>
+        <script type="text/javascript" src="lib/electron/electron-helper.js"></script>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='style.css' rel='stylesheet' type='text/css'/>
-        <script type="text/javascript" src="cordova.js"></script>
+        <meta name="referrer" content="origin-when-cross-origin" />
+        <link rel="icon" type="image/png" href="img/icon.png" />
+        <script src="config.js"></script>
+        
+        <link href='style/style.css' rel='stylesheet' type='text/css'/>
+        
+        <link href='lib/onsenui/css/onsenui.css' rel='stylesheet' type='text/css'/>
+        <link href='lib/onsenui/css/onsen-css-components.min.css' rel='stylesheet' type='text/css'/>
+        <script src="lib/onsenui/js/onsenui.min.js"></script>
+        
+        <script src="lib/vue/vue.min.js"></script>
+        <script src="lib/vue/vue-onsenui.js"></script>
+        <script src="core/vue_create_event.js"></script>
+        
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/puli-utils/puli-string-utils.js"></script>
+        <script src="lib/puli-utils/puli-number-utils.js"></script>
+        <script src="lib/puli-utils/puli-ajax-utils.js"></script>
+        <script src="lib/puli-utils/puli-time-utils.js"></script>
+        
+        <script src="lib/i18n/i18n.js"></script>
+        <script src="core/i18n.js"></script>
+        
+        <script src="lib/status_code/http_status_codes.js"></script>
+        
+        <link href='lib/semantic-ui/semantic.min.css' rel='stylesheet' type='text/css'/>
+        <script src="lib/semantic-ui/semantic.min.js"></script>
+        <link href='style/onsenui-semanticui.css' rel='stylesheet' type='text/css'/>
+        
+        <script src="lib/js-xlsx/shim.min.js"></script>
+        <script src="lib/js-xlsx/xlsx.full.min.js"></script>
+        <script src="lib/js-xlsx/Blob.js"></script>
+        <script src="lib/js-xlsx/FileSaver.js"></script>
+        <script src="lib/js-xlsx/xlsx-helper.js"></script>
+        
     </head>
-    <body>
-        <div id="content">
-            <div class="content-container">
-                <img src="spin.svg" />
-                <div>
-                    <!-- Configuration Start: Please customize following configuration -->
-                    <h1>布丁布丁吃什麼？</h1>
-                    <div class="description"><span>我不是在實驗室<br />就是在前往實驗室的路上</span></div>
-                    <!-- Configuration End -->
-                </div>
-            </div>
-        </div>
-        <div class="footer" id="footer">
-<div class="container clearfix">
-<p>
-<span class="blog-copyright">
-    <!-- Configuration Start: Please customize following configuration -->
-    © Copyright 2018 <a href="http://blog.pulipuli.info/">布丁布丁吃什麼？</a>
-    <!-- Configuration End -->
-</span>
-</p>
-</div>
-</div>
-        <script type="text/javascript">
-                // device APIs are available
-                function onDeviceReady() {
-                    if (history.length > 1) {
-                        navigator.app.exitApp();
-                        return;
-                    }
-                    
-                    //alert(navigator.network.connection.type);
-                    if (navigator.network.connection.type === Connection.NONE) {
-                        //location.replace("offline.html");
-                        location.href = "offline.html";
-                    } else {
-                        // <!-- Configuration Start: Please customize following configuration -->
-                        location.replace("../loading-test/index.html");
-                        // <!-- Configuration End -->
-                    }
-                }
-                document.addEventListener("deviceready", onDeviceReady, false);
-        </script>
-    </body>
+<body>
+    
+    <div id="app"></div>
+    <script type="text/javascript" src="core/controller.js"></script>
+    
+        
+</body>
 </html>
