@@ -137,7 +137,7 @@ hybird_app_helper = {
                                 alert("Failed file read: " + e.toString());
                             };
                             try {
-                                var blob = _this.b64toFile(_content, _filename, _mime);
+                                var blob = _this.cordovaB64toBlob(_content, _filename, _mime);
                                 fileWriter.write(blob);
                             }catch(e){alert(e)}
                         });
@@ -177,6 +177,29 @@ hybird_app_helper = {
         }
         var file = new File(byteArrays, filename, {type: contentType});
         return file;
+    },
+    cordovaB64toBlob: (b64Data, contentType, sliceSize) {
+            contentType = contentType || '';
+            sliceSize = sliceSize || 512;
+
+            var byteCharacters = atob(b64Data);
+            var byteArrays = [];
+
+            for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+                var byteNumbers = new Array(slice.length);
+                for (var i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+
+                var byteArray = new Uint8Array(byteNumbers);
+
+                byteArrays.push(byteArray);
+            }
+
+          var blob = new Blob(byteArrays, {type: contentType});
+          return blob;
     },
     
     // -----------
