@@ -178,7 +178,7 @@ hybird_app_helper = {
         var file = new File(byteArrays, filename, {type: contentType});
         return file;
     },
-    cordovaB64toBlob: (b64Data, contentType, sliceSize) {
+    cordovaB64toBlob: function (b64Data, contentType, sliceSize) {
             contentType = contentType || '';
             sliceSize = sliceSize || 512;
 
