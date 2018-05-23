@@ -1,6 +1,10 @@
 <v-ons-page id="about">
     <v-ons-toolbar>
         <div class="left">
+            <ons-toolbar-button @click='sliding_menu.methods.open()' 
+                                 class="sliding-menu-open-button">
+                <v-ons-icon icon="fa-navicon"></v-ons-icon>
+            </ons-toolbar-button>
             <v-ons-back-button>
                 {{ i18n.t('Back') }}
             </v-ons-back-button>
@@ -24,7 +28,7 @@
     <v-ons-list  modifier="inset" class='panel'>
         <v-ons-list-item modifier="nodivider"
                          class="cursor-pointer"
-                         @click="electron_helper.open_window('http://blog.pulipuli.info/p/donation.html', 'donate')">
+                         @click="hyper_app_helper.open_window('http://blog.pulipuli.info/p/donation.html', 'donate')">
             <v-ons-row class="ui icon positive message">
                 <ons-icon icon="fa-coffee" class="icon"></ons-icon>
                 <v-ons-col>
@@ -39,7 +43,7 @@
         </v-ons-list-item>
 
         <v-ons-list-item modifier="chevron" 
-                         @click="electron_helper.open_window('https://github.com/pulipulichen/electron-loading-test', 'github')">
+                         @click="hyper_app_helper.open_window('https://github.com/pulipulichen/HTML5-Hybird-APP-Framework', 'github')">
             <div class="left icon">
                 <v-ons-icon icon="fa-github" class="list-item__icon"></v-ons-icon>
             </div>
@@ -47,18 +51,9 @@
                 {{ i18n.t('GitHub: Source code') }}
             </div>
         </v-ons-list-item>
-        <v-ons-list-item modifier="chevron"
-                         @click="electron_helper.open_window('https://github.com/pulipulichen/electron-loading-test/issues', 'github_issues')">
-            <div class="left icon">
-                <v-ons-icon icon="fa-flag" class="list-item__icon"></v-ons-icon>
-            </div>
-            <div class="center">
-                {{ i18n.t('Issues: Error report') }}
-            </div>
-        </v-ons-list-item>
         <v-ons-list-item modifier="chevron nodivider"
                          class="cursor-pointer"
-                         @click="electron_helper.open_window('http://blog.pulipuli.info', 'blog')">
+                         @click="hyper_app_helper.open_window('http://blog.pulipuli.info', 'blog')">
             <div class="left icon">
                 <v-ons-icon icon="md-blogger" class="list-item__icon"></v-ons-icon>
             </div>

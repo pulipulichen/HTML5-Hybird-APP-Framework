@@ -3,6 +3,7 @@ CONFIG = {
     locale: "zh-tw",
     controllers: [
         "main_page",
-        "about"
+        "about",
+        "sliding_menu",
     ]
 };

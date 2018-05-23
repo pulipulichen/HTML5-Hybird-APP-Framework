@@ -12,3 +12,7 @@ ons-button.ui.button ons-icon {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+
+ons-toolbar ons-toolbar-button {
+    line-height: 44px;
+}
