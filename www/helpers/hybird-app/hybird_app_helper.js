@@ -82,6 +82,7 @@ hybird_app_helper = {
                 break;
             case 'mobile':
                 //cordova.file.cacheDirectory
+                /*
                 var _filepath = cordova.file.cacheDirectory + "/" + _filename;
                 window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function (dir) {
                     //console.log("got main dir",dir);
@@ -94,6 +95,8 @@ hybird_app_helper = {
                         });
                     });
                 });
+                */
+                window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
                 break;
             default:    // 'web'
                 var blob = this.b64toFile(_content, _filename, _mime);
