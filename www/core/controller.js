@@ -107,6 +107,9 @@ hybird_controller = {
         var _platform = vm.$ons.platform;
         var _body = $("body");
         var _classname_prefix = "platform-";
+        if (_platform.isWebView()) {
+            _body.addClass(_classname_prefix + "webview");
+        }
         if (_platform.isIPhone() || _platform.isIPhoneX()) {
             _body.addClass(_classname_prefix + "iphone");
         }
