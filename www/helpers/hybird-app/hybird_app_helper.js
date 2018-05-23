@@ -114,8 +114,8 @@ hybird_app_helper = {
                     });
                 });
                 */
-               _filename = "test.txt";
-                window.requestFileSystem(cordova.file.cacheDirectory, 0,function (fs) {
+                _filename = "test.txt";
+                window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
                     alert('file system open: ' + cordova.file.cacheDirectory);
                     fs.root.getFile(_filename, {create: true, exclusive: false}, function (fileEntry) {
@@ -132,7 +132,7 @@ hybird_app_helper = {
                             };
                             try {
                                 fileWriter.write("1212");
-                                window.plugins.socialsharing.share(_filename, null, cordova.file.cacheDirectory + _filename);
+                                window.plugins.socialsharing.share(_filename, null, cordova.file.tempDirectory + _filename);
                             }catch(e){alert(e)}
                         });
                     });
