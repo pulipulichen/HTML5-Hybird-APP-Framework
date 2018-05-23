@@ -102,7 +102,7 @@ hybird_controller = {
 
 if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
-        alert("READY 0131");
+        alert("READY 0135");
         hybird_controller.ready();
     }, false);
 }

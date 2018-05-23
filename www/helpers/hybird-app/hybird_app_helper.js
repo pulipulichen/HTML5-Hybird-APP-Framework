@@ -86,10 +86,10 @@ hybird_app_helper = {
                 break;
             case 'mobile':
                 //cordova.file.cacheDirectory
-                /*
-                var _filepath = cordova.file.cacheDirectory + "/" + _filename;
+                
+                var _filepath = cordova.file.tempDirectory + "/" + _filename;
                 alert(_filepath);
-                window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function (dir) {
+                window.resolveLocalFileSystemURL(cordova.file.tempDirectory, function (dir) {
                     //console.log("got main dir",dir);
                     alert(2);
                     dir.getFile(_filename, {create: true}, function (file) {
@@ -106,8 +106,8 @@ hybird_app_helper = {
                         });
                     });
                 });
-                */
-                window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
+                
+                //window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
                 break;
             default:    // 'web'
                 var blob = this.b64toFile(_content, _filename, _mime);
