@@ -1,10 +1,11 @@
 const {app, BrowserWindow, dialog, Menu, Tray, globalShortcut, ipcMain, session, shell} = require('electron');
 let fs = require('fs');
 const osTmpdir = require('os-tmpdir');
+var path = require('path');
 
 module.exports = {
     setup: function () {
-        ipcMain.on('save_file', (event, _filename, _filters, _content) => {
+        ipcMain.on('save_file', (event, _filename, _filters, _content, _open) => {
             //var _filename = arg[0];
             //var content = arg[1];
             // You can obviously give a direct path without use the dialog (C:/Program Files/path/myfileexample.txt)
@@ -12,6 +13,7 @@ module.exports = {
                 defaultPath: _filename,
                 filters: JSON.parse(_filters)
             }, (fileName) => {
+                
                 if (fileName === undefined) {
                     console.log("You didn't save the file");
                     return;
@@ -19,7 +21,10 @@ module.exports = {
 
                 // fileName is a string that contains the path and filename created in the save file dialog.  
                 fs.writeFileSync(fileName, _content, 'base64');
-                shell.openItem(fileName);
+                //shell.openItem(path.dirname(fileName));
+                if (_open === true) {
+                    shell.openItem(fileName);
+                }
             });
         }); // ipcMain.on('save-file', (event, arg)=> {
 

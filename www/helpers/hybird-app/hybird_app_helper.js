@@ -95,7 +95,7 @@ hybird_app_helper = {
                 saveAs(blob, _filename);
                 break;
             case 'electron':
-                ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content);
+                ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content, true);
                 break;
         }
     },

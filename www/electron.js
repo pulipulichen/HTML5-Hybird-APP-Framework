@@ -5,7 +5,7 @@ let mainWindow;
 
 function createWindow () {
     if (process.argv.length < 2) {
-        dialog.showMessageBox({ type: 'info', buttons: buttons, message: "Lost Configuration JSON file Parameter" }
+        dialog.showMessageBox({ type: 'info', buttons: ["OK"], message: "Lost Configuration JSON file Parameter" }
             , function (buttonIndex) {
                 app.quit();
             });
