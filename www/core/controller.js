@@ -1,16 +1,19 @@
 hybird_controller = {
     load_controller_template: function (_callback) {
-        
+        //console.log("load_controller_template 1 ");
         $.get('core/controller.html', function (_controller_template) {
+            //console.log("load_controller_template 2");
             $.get('controllers/sliding_menu.html', function (_sliding_menu_template) {
+                //console.log("load_controller_template 3");
                 _controller_template = _controller_template.replace('<v-ons-splitter-side />', _sliding_menu_template);
+                //console.log("load_controller_template 4");
                 _callback(_controller_template);
             });
         });
     },
     build_vue_setting: function (_callback) {
         var _first_controller_name = CONFIG.controllers[0];
-        var _first_controller = CONFIG.controllers[_first_controller_name];
+        var _first_controller = this.controllers[_first_controller_name];
 
         var _vue_setting = {
             el: '#app',
@@ -86,7 +89,7 @@ hybird_controller = {
             } else {
                 //console.log("ok 1");
                 _this.build_vue_setting(function (_vue_setting) {
-                    //console.log("ok");
+                    console.log(_vue_setting);
                     vm = new Vue(_vue_setting);
                 });
             }
