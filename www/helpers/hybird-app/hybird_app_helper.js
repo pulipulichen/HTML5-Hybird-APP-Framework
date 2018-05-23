@@ -114,7 +114,7 @@ hybird_app_helper = {
                     });
                 });
                 */
-                _filename = "test0241.ods";
+                //_filename = "test0241.ods";
                 window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
                     //alert('file system open: ' + cordova.file.cacheDirectory);
@@ -123,10 +123,10 @@ hybird_app_helper = {
                         fileEntry.createWriter(function (fileWriter) {
 
                             fileWriter.onwriteend = function () {
-                                alert("Successful file read..." + "cdvfile://localhost/temporary/" + _filename);
+                                //alert("Successful file read..." + "cdvfile://localhost/temporary/" + _filename);
                                 resolveLocalFileSystemURL("cdvfile://localhost/temporary/" + _filename, function(entry) {
                                     var nativePath = entry.toURL();
-                                    alert('Native URI: ' + nativePath);
+                                    //alert('Native URI: ' + nativePath);
                                     //document.getElementById('video').src = nativePath;
                                     window.plugins.socialsharing.share(_filename, "description", nativePath);
                                 });
@@ -139,7 +139,7 @@ hybird_app_helper = {
                             try {
                                 var blob = _this.cordovaB64toBlob(_content, _mime);
                                 fileWriter.write(blob);
-                            }catch(e){alert(e)}
+                            } catch(e){alert(e)}
                         });
                     });
                     
