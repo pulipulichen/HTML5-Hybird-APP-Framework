@@ -92,7 +92,7 @@ hybird_app_helper = {
         switch (this.mode) {
             case 'web': 
                 var blob = this.b64toFile(_content, _filename, _mime);
-                saveAs(_content, _filename);
+                saveAs(blob, _filename);
                 break;
             case 'electron':
                 ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content);

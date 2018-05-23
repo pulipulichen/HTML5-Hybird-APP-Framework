@@ -3,11 +3,12 @@ ons-toolbar h1 {
     margin: 0;
     font-weight: bold;
 }
-ons-toolbar ons-toolbar-bottom {
+ons-toolbar ons-toolbar-bottom, ons-back-button {
     cursor: pointer;
 }
 
-ons-list-item[modifier="chevron"] {
+ons-list-item[modifier="chevron"],
+ons-list-item.list-item--chevron {
     cursor: pointer;
 }
 
