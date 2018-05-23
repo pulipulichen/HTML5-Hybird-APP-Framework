@@ -1,0 +1,17 @@
+{
+    "width": 800, 
+    "height": 600, 
+    "skipTaskbar": false, 
+    "frame": true,
+    "kiosk": false,
+    "title": "Hybird APP",
+    "icon": "img/icon.png",
+    "webPreferences": {
+        "devTools": true,
+        "webSecurity": false,
+        "allowDisplayingInsecureContent": true,
+        "allowRunningInsecureContent": true,
+        "nodeIntegration": true
+    },
+    "openDevTools": false
+}

@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+<!-- 
+  PhoneGap Build Configuration
+  -->
 
 <!-- Configuration Start: Please customize following configuration -->
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="hybrid-app.pulipuli.info" version="1.0.0">
