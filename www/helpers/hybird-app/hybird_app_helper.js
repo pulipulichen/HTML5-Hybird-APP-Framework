@@ -129,9 +129,10 @@ hybird_app_helper = {
                             fileWriter.onerror = function (e) {
                                 alert("Failed file read: " + e.toString());
                             };
-
-                            fileWriter.write("1212");
-                            window.plugins.socialsharing.share(null, _filename, fs.name + "/newTempFile.txt");
+                            try {
+                                fileWriter.write("1212");
+                                window.plugins.socialsharing.share(null, _filename, fs.name + "/newTempFile.txt");
+                            }catch(e){alert(e)}
                         });
                     });
                     
