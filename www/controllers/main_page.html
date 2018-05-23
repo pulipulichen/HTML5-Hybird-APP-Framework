@@ -23,6 +23,9 @@
         <v-ons-list-item>
             {{ main_page.data.message }}
         </v-ons-list-item>
+        <v-ons-list-item modifier="chevron tappable" @click='sliding_menu.methods.push_page(next_page)' >
+            {{ i18n.t("Go to next page") }}
+        </v-ons-list-item>
         <v-ons-list-item>
             <v-ons-button modifier="cta">
                 {{ i18n.t("Share JSON to ODS") }}

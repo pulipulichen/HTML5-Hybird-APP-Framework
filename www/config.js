@@ -4,6 +4,7 @@ CONFIG = {
     controllers: [
         "main_page",
         "about",
+        "next_page",
         "sliding_menu",
     ]
 };

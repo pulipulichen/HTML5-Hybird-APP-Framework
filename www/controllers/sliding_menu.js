@@ -5,6 +5,18 @@ sliding_menu = {
         mode: 'collapse'
     },
     methods: {
+        switch_page: function (_page) {
+            while (vm.$data.pageStack.length > 0) {
+                vm.$data.pageStack.pop();
+            }
+            vm.$data.pageStack.push(_page);
+            sliding_menu.methods.close();
+        },
+        push_page: function (_page) {
+            vm.$data.pageStack.push(_page);
+            sliding_menu.methods.close();
+        },
+        
         modechange: function (_mode) {
             //console.log(_mode);
             if (_mode === undefined) {
@@ -27,20 +39,6 @@ sliding_menu = {
         close: function () {
             sliding_menu.data.opened = false;
         },
-        /*
-        ready: function () {
-            var _mode = $('#sliding_menu').attr('mode');
-            if (_mode === undefined) {
-                setTimeout(function () {
-                    sliding_menu.methods.ready();
-                }, 0);
-            }
-            else {
-                sliding_menu.methods.modechange(_mode);
-                //console.log(_mode);
-            }
-        },
-        */
        ready: function () {
            setTimeout(function () {
                sliding_menu.methods.modechange();
