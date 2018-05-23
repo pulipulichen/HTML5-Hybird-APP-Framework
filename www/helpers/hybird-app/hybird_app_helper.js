@@ -115,10 +115,17 @@ hybird_app_helper = {
                 });
                 */
                 window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
-
+                    //alert('file system open: ' + fs.name);
                     alert('file system open: ' + fs.name);
-                    createFile(fs.root, "newTempFile.txt", false);
-                    window.plugins.socialsharing.share(null, _filename, "newTempFile.txt");
+                    fs.root.getFile(_filename, {create: true, exclusive: false}, function(fileEntry) {
+                        try {
+                        writeFile(fileEntry, null, false);
+                        window.plugins.socialsharing.share(null, _filename, "newTempFile.txt");
+                        } catch (e) {
+                            alert(e);
+                        }
+                    });
+                    
 
                 });
                 
