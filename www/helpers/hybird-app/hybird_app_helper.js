@@ -79,7 +79,7 @@ hybird_app_helper = {
      */
     save_as: function (_filename, _content, _mime, _filters) {
         //this.console_log([_filename, _content]);
-        var _this;
+        var _this = this;
         switch (this.platform) {
             case 'electron':
                 ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content, true);
