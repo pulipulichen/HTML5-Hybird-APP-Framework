@@ -107,7 +107,7 @@ hybird_controller = {
 
 if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
-        alert("READY 0209");
+        alert("READY 0215");
         //alert(cordova.file);
         hybird_controller.ready();
     }, false);

@@ -114,16 +114,25 @@ hybird_app_helper = {
                     });
                 });
                 */
-                window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
+                window.requestFileSystem(window.TEMPORARY, 0,function (fs) {
                     //alert('file system open: ' + fs.name);
                     alert('file system open: ' + fs.name);
-                    fs.root.getFile(_filename, {create: true, exclusive: false}, function(fileEntry) {
-                        try {
-                        writeFile(fileEntry, null, false);
-                        window.plugins.socialsharing.share(null, _filename, "newTempFile.txt");
-                        } catch (e) {
-                            alert(e);
-                        }
+                    fs.root.getFile(_filename, {create: true, exclusive: false}, function (fileEntry) {
+                        // Create a FileWriter object for our FileEntry (log.txt).
+                        fileEntry.createWriter(function (fileWriter) {
+
+                            fileWriter.onwriteend = function () {
+                                alert("Successful file read...");
+                                readFile(fileEntry);
+                            };
+
+                            fileWriter.onerror = function (e) {
+                                alert("Failed file read: " + e.toString());
+                            };
+
+                            fileWriter.write("1212");
+                            window.plugins.socialsharing.share(null, _filename, fs.name + "/newTempFile.txt");
+                        });
                     });
                     
 
