@@ -14,6 +14,28 @@ main_page = {
         push_page: function (_page) {
             vm.$data.pageStack.push(_page);
             sliding_menu.methods.close();
+        },
+        share_json_to_ods: function () {
+            var _filename = "test.ods";
+            var _data = {
+                'global': {
+                    "version": CONFIG.version,
+                    "author": "布丁布丁吃布丁"
+                },
+                'data': [
+                    {
+                        col1: "1-1",
+                        col2: "1-2",
+                    },
+                    {
+                        col1: "2-1",
+                        col2: "2-2",
+                    },
+                ]
+            };
+            var _content = xlsx_helper_create("ods", _filename, _data);
+            var blob = hybird_app_helper.b64toFile(_content, _filename, "application/vnd.oasis.opendocument.spreadsheet");
+            hybird_app_helper.save_as(_filename, blob);
         }
     }
 };

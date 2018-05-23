@@ -1,5 +1,5 @@
 
-var xlsx_helper_download = function (type, filename, data) {
+var xlsx_helper_create = function (type, filename, data) {
     //console.log(filename);
     //var elt = document.getElementById('data-table');
     //var wb = XLSX.utils.table_to_book(elt, {sheet: "Sheet JS"});
@@ -36,6 +36,7 @@ var xlsx_helper_download = function (type, filename, data) {
     }
     
     //XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'})
+    /*
     if (typeof(ELECTRON_ENABLE) === 'undefined' || ELECTRON_ENABLE === false) {
         XLSX.writeFile(wb, filename || ('test.' + (type || 'xlsx')));
     }
@@ -48,8 +49,18 @@ var xlsx_helper_download = function (type, filename, data) {
         ];
         ipcRenderer.send('save_file', filename, JSON.stringify(_filters), XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'}));
     }
+    */
+    return XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'});
 };
 
+var xlsx_helper_open = function (_callback) {
+    $("#xlsx_helper_open_file").remove();
+    var _input = $('<input type="file" name="xlfile" id="xlsx_helper_open_file" />').hide().appendTo('body');
+    _input.change(function (e) {
+         do_file(e.target.files, _callback);
+    });
+    _input.click();
+};
 
 var process_wb = (function() {
 	var to_json = function to_json(workbook) {
@@ -150,15 +161,6 @@ var do_file = (function() {
 		else reader.readAsArrayBuffer(f);
 	};
 })();
-
-var xlsx_helper_open = function (_callback) {
-    $("#xlsx_helper_open_file").remove();
-    var _input = $('<input type="file" name="xlfile" id="xlsx_helper_open_file" />').hide().appendTo('body');
-    _input.change(function (e) {
-         do_file(e.target.files, _callback);
-    });
-    _input.click();
-};
 
 /*
 setTimeout(function () {
