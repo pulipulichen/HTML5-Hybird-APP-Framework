@@ -47,10 +47,11 @@ hybird_controller = {
         });
     },
     vue_create: function () {
+        var _this = this;
         $(function () {
             // 先把每個controller的ready做完
-            for (var _name in this.controllers) {
-                var _controller = this.controllers[_name];
+            for (var _name in _this.controllers) {
+                var _controller = _this.controllers[_name];
                 if (typeof (_controller.methods) === "object"
                         && typeof (_controller.methods.ready) === "function") {
                     _controller.methods.ready();
@@ -58,6 +59,7 @@ hybird_controller = {
             }
 
             vue_create_event();
+            _this.detect_platform();
             //_backspace_bind();
             document.title = i18n.t("TITLE");
         });
@@ -97,12 +99,15 @@ hybird_controller = {
         };
 
         _loop(0);
+    },
+    detect_platform: function () {
+        
     }
 };
 
 if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
-        alert("READY 0135");
+        alert("READY 0138");
         hybird_controller.ready();
     }, false);
 }
