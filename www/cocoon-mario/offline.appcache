@@ -1,0 +1,31 @@
+CACHE MANIFEST
+# Version 0.42 (c) 2015 Martin Drapeau
+
+js/3rd/qtree.js
+js/3rd/underscore.js
+js/3rd/backbone.native.js
+js/3rd/backbone.js
+
+js/backbone-game-engine/adjust-viewport.js
+js/backbone-game-engine/shapes.js
+js/backbone-game-engine/core.js
+js/backbone-game-engine/character.js
+js/backbone-game-engine/input.js
+js/backbone-game-engine/hero.js
+js/backbone-game-engine/world.js
+js/backbone-game-engine/local-storage.js
+js/backbone-game-engine/camera.js
+js/backbone-game-engine/editor.js
+
+js/src/mario.js
+js/src/tiles.js
+js/src/artifacts.js
+js/src/enemies.js
+js/src/display.js
+js/src/level_1-1.js
+js/src/main.js
+
+img/super-mario-2x.png
+img/super-mario-tiles-2x.png
+img/super-mario-enemies-2x.png
+img/icons.png

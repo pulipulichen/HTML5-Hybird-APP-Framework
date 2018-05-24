@@ -30,6 +30,12 @@
                 {{ i18n.t("Share JSON to ODS") }}
             </v-ons-button>
         </v-ons-list-item>
+        <v-ons-list-item modifier="chevron tappable" @click='location.href="SpaceSimDemo"' >
+            {{ i18n.t("Cocoon.js demo: SpaceSimDemo") }}
+        </v-ons-list-item>
+        <v-ons-list-item modifier="chevron tappable" @click='location.href="cocoon-mario"' >
+            {{ i18n.t("Cocoon.js demo: Super Mario Bros") }}
+        </v-ons-list-item>
     </v-ons-list>
 
     <v-ons-fab position="bottom right"
