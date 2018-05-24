@@ -13,9 +13,10 @@ A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap 
 - Mobile APP: 
     * https://build.phonegap.com/apps/3173248/install 
     * https://bit.ly/2KOyDVp
+    * ![Mobile APP](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
 - Mobile APP Homepage: https://build.phonegap.com/apps/3170327/share
 
-![Alt text](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
+
 
 # Pacakge
 
