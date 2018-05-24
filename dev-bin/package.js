@@ -5,6 +5,7 @@ var _app_name = "hybird-app";
 
 shell.cd(__dirname);
 shell.cd('../www/');
+
 if (process.platform === "win32") {
     var _dir_name = "hybird-app-win32-x64";
     
