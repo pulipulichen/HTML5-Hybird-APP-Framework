@@ -164,5 +164,5 @@ if (hybird_app_helper.detect_mode() === "mobile") {
     }, false);
 }
 else {
-    //hybird_app_loader.ready();
+    hybird_app_loader.ready();
 }

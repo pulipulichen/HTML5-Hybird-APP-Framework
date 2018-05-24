@@ -1,6 +1,5 @@
 const {app, BrowserWindow, dialog, Menu, Tray, globalShortcut, ipcMain, session, shell} = require('electron');
 let fs = require('fs');
-const osTmpdir = require('os-tmpdir');
 let mainWindow;
 
 function createWindow () {

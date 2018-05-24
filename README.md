@@ -1,5 +1,7 @@
 # HTML5-Hybird-APP-Framework
+
 A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap Build (mobile application).
+    
 - GirHub: https://github.com/pulipulichen/HTML5-Hybird-APP-Framework
 - ISSUES: https://github.com/pulipulichen/HTML5-Hybird-APP-Framework/issues
 
@@ -15,22 +17,43 @@ A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap 
 
 ![Alt text](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
 
-# 安裝electron相關套件
-* npm install electron-prebuilt --save-dev
-* npm install electron-prebuilt -g
-* npm install electron-packager --save-dev
-* npm install electron-packager -g
-* npm install asar
-* npm install --save os-tmpdir
+# Pacakge
 
-# 設定檔
-請修改webapp-config.json設定檔，主要修改URL屬性
+## Web
+- Open `./www/index.html`
+
+## Electron
+- node `./dev-bin/package.js`
+
+## Phonegap Build
+- Tutorial: http://blog.pulipuli.info/2017/10/phonegapapp-phoengap-web-template-wrap.html
+- https://build.phonegap.com/apps
+- https://build.phonegap.com/apps/3173248/builds
+
+# Environment Setup
+
+````
+npm install electron-prebuilt --save-dev
+npm install electron-prebuilt -g
+npm install electron-packager --save-dev
+npm install electron-packager -g
+npm install asar
+````
+
+# Configuration
+
+## Web (global)
+
+`./www/config.js`
+
+## Electron
+
+`./www/electron-config.json`
+
+- 請修改webapp-config.json設定檔，主要修改URL屬性
 
 請務必確認JSON格式是否正確：使用JSONLint驗證 http://jsonlint.com/
 
-ICON設定請以PNG格式、Base64編碼。
-- 使用BASE64 IMAGE轉換圖片格式：https://www.base64-image.de/
-- PNG to ICNS (Mac OS icon format): https://iconverticons.com/online/
 
 openDevTools決定是否預設開啟偵錯工具
 
@@ -53,26 +76,29 @@ https://github.com/electron/electron/blob/master/docs/api/browser-window.md
 * Ctrl+Right：向前一頁
 * Ctrl+Shift+i：切換偵錯工具
 
-#編譯方法
-1. 先開啟Node.js command prompt：在 開啟 > Node.js > Node.js command prompt
-2. 切換到這個此目錄底下的bin
-3. build1.bat
-4. 切換回這個此目錄底下的bin
-5. build2.bat
-
-# 感謝
-此程式碼的起點主要來自：QQBoxy-酷酷方盒子
-http://qqboxy.blogspot.com/2016/06/electron-javascript-windows.html
-
 # Reference
 - Hourglass Icon http://www.iconninja.com/hourglass-time-timer-icon-5949
 - https://gist.github.com/svagi/aa59e96e4b6a9885f28e Universal JSON dictionary of HTTP status codes. http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html 
 
-# OnsenUI ICON
+
+## PhoneGap Build
+
+`./config.xml`
+
+# Development
+
+## OnsenUI ICON
+
 - fa https://fontawesome.com/icons?d=gallery
 - ion http://ionicons.com/
 - md http://zavoloklom.github.io/material-design-iconic-font/icons.html
 
-# OnsenUI Vue API
+## OnsenUI Vue API
+
 - https://onsen.io/v2/api/vue/
 - https://semantic-ui.com/kitchen-sink.html
+
+# 感謝
+
+此程式碼的起點主要來自：QQBoxy-酷酷方盒子
+http://qqboxy.blogspot.com/2016/06/electron-javascript-windows.html
