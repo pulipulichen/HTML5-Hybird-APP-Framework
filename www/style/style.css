@@ -100,25 +100,29 @@ ons-list-item {
 }
 
 
- .platform-webview ons-fab .fab__icon {
+.platform-webview ons-fab .fab__icon {
     /*margin-top: -10px !important;*/
     line-height: 3.5rem !important;
     display: inline;
     /*border: 1px solid green;*/
     box-sizing: initial !important;
-  }
+}
 
-  .platform-webview ons-fab .fab__icon ons-icon {
+.platform-webview ons-fab .fab__icon ons-icon {
     /*margin-top: -10px !important;*/
     line-height: normal !important;
     display: inline;
     /*border: 1px solid red;*/
     box-sizing: initial !important;
-  }
+}
 
-  .platform-webview ons-fab {
+.platform-webview ons-fab {
     /*margin-top: -10px !important;*/
     line-height: normal !important;
-  }
+}
 
-
+body.loading {
+    background-image: url(../img/icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}

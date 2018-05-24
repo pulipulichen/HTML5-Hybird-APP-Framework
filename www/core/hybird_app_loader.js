@@ -64,6 +64,7 @@ hybird_app_loader = {
             document.title = i18n.t("TITLE");
             setTimeout(function () {
                 hybird_app_loader.detect_platform();
+                $("body").removeClass("loading");
             }, 0);
         });
     },
@@ -163,5 +164,5 @@ if (hybird_app_helper.detect_mode() === "mobile") {
     }, false);
 }
 else {
-    hybird_app_loader.ready();
+    //hybird_app_loader.ready();
 }
