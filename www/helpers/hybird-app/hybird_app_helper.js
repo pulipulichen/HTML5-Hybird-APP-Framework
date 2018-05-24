@@ -97,13 +97,23 @@ hybird_app_helper = {
     // ----------------------
     
     open_window: function (_link, _target) {
+        var _this = this;
         if (this.platform === "electron") {
             ipcRenderer.send('open_window', _link);
         }
         else if (this.platform === "mobile") {
             //window.open(_link, "_system");
             //navigator.app.loadUrl(_link, { openExternal:true });
-            cordova.InAppBrowser.open(_link, "_system");
+            if (typeof(cordova) !== "object" 
+                    || typeof(cordova.InAppBrowser) !== "object"
+                    || typeof(cordova.InAppBrowser.open) !== "function") {
+                setTimeout(function () {
+                    _this.open_window(_link);
+                }, 100);
+            }
+            else {
+                cordova.InAppBrowser.open(_link, "_system");
+            }
         }
         else {
             if (_target === undefined) {

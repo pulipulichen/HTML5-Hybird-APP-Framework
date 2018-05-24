@@ -1,7 +1,7 @@
-hybird_controller = {
+hybird_app_loader = {
     load_controller_template: function (_callback) {
         //console.log("load_controller_template 1 ");
-        $.get('core/controller.html', function (_controller_template) {
+        $.get('core/hybird_app_loader.html', function (_controller_template) {
             //console.log("load_controller_template 2");
             $.get('controllers/sliding_menu.html', function (_sliding_menu_template) {
                 //console.log("load_controller_template 3");
@@ -63,7 +63,7 @@ hybird_controller = {
             //_backspace_bind();
             document.title = i18n.t("TITLE");
             setTimeout(function () {
-                hybird_controller.detect_platform();
+                hybird_app_loader.detect_platform();
             }, 0);
         });
     },
@@ -159,9 +159,9 @@ if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
         //alert("READY 0250");
         //alert(cordova.file);
-        hybird_controller.ready();
+        hybird_app_loader.ready();
     }, false);
 }
 else {
-    hybird_controller.ready();
+    hybird_app_loader.ready();
 }
