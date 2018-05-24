@@ -5,23 +5,26 @@ A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap 
 - GirHub: https://github.com/pulipulichen/HTML5-Hybird-APP-Framework
 - ISSUES: https://github.com/pulipulichen/HTML5-Hybird-APP-Framework/issues
 
+----
+
 # Package Results
 - Web 
     * https://pulipulichen.github.io/HTML5-Hybird-APP-Framework/www/ 
     * https://bit.ly/2kj3XAv
-- Windows x64: https://drive.google.com/open?id=1w_fEdw5w5etIYKPDI4PcGn3tYEHipr9e
+- Windows x64
+    * Download: https://drive.google.com/file/d/1HRjAkyXuqqBhaLRoEEe7cPKjpGdj3Wbv/view?usp=sharing
+    * Package by 7-zip: https://portableapps.com/apps/utilities/7-zip_portable
+    * Upload (for owner): https://drive.google.com/open?id=1FV6eclqYY_4NBfPhLlPOQkZlCDwm4L0w
 - Mobile APP: 
-    * https://build.phonegap.com/apps/3173248/install 
-    * https://bit.ly/2KOyDVp
-    * ![Mobile APP](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
-- Mobile APP Homepage: https://build.phonegap.com/apps/3170327/share
-
-
+    * Install :https://build.phonegap.com/apps/3173248/install 
+    * Install shorten URL: https://bit.ly/2KOyDVp
+      ![Mobile APP](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3173248/install/sexhpewxSToEta1DLsUm&chld=L|1&choe=UTF-8)
+    * Homepage: https://build.phonegap.com/apps/3170327/share
 
 # Pacakge
 
 ## Web
-- Open `./www/index.html`
+- Open `./www/index.html` in your browser.
 
 ## Electron
 - node `./dev-bin/package.js`
@@ -30,6 +33,8 @@ A HTML5 framework for local web, Electron.js (desktop application) and PhoneGap 
 - Tutorial: http://blog.pulipuli.info/2017/10/phonegapapp-phoengap-web-template-wrap.html
 - https://build.phonegap.com/apps
 - https://build.phonegap.com/apps/3173248/builds
+
+----
 
 # Environment Setup
 
@@ -40,6 +45,8 @@ npm install electron-packager --save-dev
 npm install electron-packager -g
 npm install asar
 ````
+
+----
 
 # Configuration
 
@@ -77,14 +84,11 @@ https://github.com/electron/electron/blob/master/docs/api/browser-window.md
 * Ctrl+Right：向前一頁
 * Ctrl+Shift+i：切換偵錯工具
 
-# Reference
-- Hourglass Icon http://www.iconninja.com/hourglass-time-timer-icon-5949
-- https://gist.github.com/svagi/aa59e96e4b6a9885f28e Universal JSON dictionary of HTTP status codes. http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html 
-
-
 ## PhoneGap Build
 
 `./config.xml`
+
+----
 
 # Development
 
@@ -98,6 +102,8 @@ https://github.com/electron/electron/blob/master/docs/api/browser-window.md
 
 - https://onsen.io/v2/api/vue/
 - https://semantic-ui.com/kitchen-sink.html
+
+----
 
 # 感謝
 
