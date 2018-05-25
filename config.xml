@@ -17,7 +17,7 @@
     <access origin="*"/>
     <allow-navigation href="*" />
   
-    <content src="www/index.html"/>
+    <content src="index.html"/>
     <icon src="www/img/icon.png"/>
   
     <!-- https://build.phonegap.com/current-support -->
@@ -36,5 +36,5 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
     <!-- <plugin name="cordova-plugin-file" spec="~6.0.1" /> -->
     <plugin name="cordova-plugin-file" version="5.0.0" />
-    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
 </widget>
