@@ -47,7 +47,9 @@ cordova_helper = {
                             var nativePath = entry.toURL();
                             //alert('Native URI: ' + nativePath);
                             //document.getElementById('video').src = nativePath;
-                            _callback(nativePath);
+                            if (typeof(_callback) === "function") {
+                                _callback(nativePath);
+                            }
                         });
                     };
 
@@ -55,7 +57,7 @@ cordova_helper = {
                         alert("Failed file read: " + e.toString());
                     };
                     try {
-                        var blob = _this.b64toBlob(_content, _mime);
+                        var blob = cordova_helper.b64toBlob(_content, _mime);
                         fileWriter.write(blob);
                     } catch (e) {
                         alert(e);

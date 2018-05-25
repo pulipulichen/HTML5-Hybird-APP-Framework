@@ -14,3 +14,5 @@ shell.cp("-R", "*", _app_dir_path);
 
 shell.cd("../electron-dist/" + _app_name + "/" );
 exec(_app_name + ".exe");
+
+process.exit();
