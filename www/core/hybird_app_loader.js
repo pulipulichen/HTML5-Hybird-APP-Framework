@@ -1,75 +1,9 @@
-hybird_controller = {
-    load_controller_template: function (_callback) {
-        //console.log("load_controller_template 1 ");
-        $.get('core/controller.html', function (_controller_template) {
-            //console.log("load_controller_template 2");
-            $.get('controllers/sliding_menu.html', function (_sliding_menu_template) {
-                //console.log("load_controller_template 3");
-                _controller_template = _controller_template.replace('<v-ons-splitter-side />', _sliding_menu_template);
-                //console.log("load_controller_template 4");
-                _callback(_controller_template);
-            });
-        });
-    },
-    build_vue_setting: function (_callback) {
-        var _first_controller_name = CONFIG.controllers[0];
-        var _first_controller = this.controllers[_first_controller_name];
-
-        var _vue_setting = {
-            el: '#app',
-            data: {
-                pageStack: [_first_controller],
-                sliding_menu: sliding_menu
-            },
-            methods: {
-                switch_page: function (_page) {
-                    while (vm.$data.pageStack.length > 0) {
-                        vm.$data.pageStack.pop();
-                    }
-                    vm.$data.pageStack.push(_page);
-                    sliding_menu.methods.close();
-                },
-                push_page: function (_page) {
-                    vm.$data.pageStack.push(_page);
-                    sliding_menu.methods.close();
-                },
-                pop_page: function () {
-                    vm.$data.pageStack.pop();
-                }
-            },
-            created: this.vue_create
-
-        };
-
-        this.load_controller_template(function (_template) {
-            _vue_setting.template = _template;
-            _callback(_vue_setting);
-        });
-    },
-    vue_create: function () {
-        var _this = this;
-        $(function () {
-            // 先把每個controller的ready做完
-            for (var _name in _this.controllers) {
-                var _controller = _this.controllers[_name];
-                if (typeof (_controller.methods) === "object"
-                        && typeof (_controller.methods.ready) === "function") {
-                    _controller.methods.ready();
-                }
-            }
-
-            vue_create_event();
-            
-            //_backspace_bind();
-            document.title = i18n.t("TITLE");
-            setTimeout(function () {
-                hybird_controller.detect_platform();
-            }, 0);
-        });
-    },
+hybird_app_loader = {
     controllers: {},
+    
+    // -------------
+    
     ready: function () {
-        
         var _this = this;
         var _loop = function (_i) {
             if (_i < CONFIG.controllers.length) {
@@ -86,22 +20,79 @@ hybird_controller = {
                             _vm.key = _name;
                         }
                         _vm.template = _template;
-
+                        //console.log(_name);
                         _this.controllers[_name] = _vm;
+                        //console.log(_this.controllers);
                         _i++;
                         _loop(_i);
                     });
                 });
             } else {
                 //console.log("ok 1");
-                _this.build_vue_setting(function (_vue_setting) {
-                    //console.log(_vue_setting);
+                
+                _this.load_controller_template(function (_template) {
+                    var _vue_setting = _this.build_vue_setting();
+                    _vue_setting.template = _template;
+                    _vue_setting.created = _this.vue_create();
                     vm = new Vue(_vue_setting);
                 });
             }
         };
 
         _loop(0);
+    },
+    
+    build_vue_setting: function () {
+        var _first_controller_name = CONFIG.controllers[0];
+        var _first_controller = this.controllers[_first_controller_name];
+
+        var _vue_setting = {
+            el: '#app',
+            data: {
+                pageStack: [_first_controller],
+                sliding_menu: sliding_menu
+            }
+            //created: _callback
+        };
+        
+        return _vue_setting;
+    },
+    load_controller_template: function (_callback) {
+        //console.log("load_controller_template 1 ");
+        $.get('core/hybird_app_loader.html', function (_controller_template) {
+            //console.log("load_controller_template 2");
+            $.get('controllers/sliding_menu.html', function (_sliding_menu_template) {
+                //console.log("load_controller_template 3");
+                _controller_template = _controller_template.replace('<v-ons-splitter-side />', _sliding_menu_template);
+                //console.log("load_controller_template 4");
+                _callback(_controller_template);
+            });
+        });
+    },
+    
+    vue_create: function () {
+        var _this = hybird_app_loader;
+        $(function () {
+            // 先把每個controller的ready做完
+            //console.log(_this.controllers);
+            for (var _name in _this.controllers) {
+                //console.log(_name);
+                var _controller = _this.controllers[_name];
+                if (typeof (_controller.methods) === "object"
+                        && typeof (_controller.methods.ready) === "function") {
+                    _controller.methods.ready();
+                }
+            }
+
+            vue_create_event();
+            
+            //_backspace_bind();
+            document.title = i18n.t("TITLE");
+            setTimeout(function () {
+                hybird_app_loader.detect_platform();
+                $("body").removeClass("loading");
+            }, 0);
+        });
     },
     detect_platform: function () {
         var _platform = vm.$ons.platform;
@@ -159,9 +150,9 @@ if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
         //alert("READY 0250");
         //alert(cordova.file);
-        hybird_controller.ready();
+        hybird_app_loader.ready();
     }, false);
 }
 else {
-    hybird_controller.ready();
+    hybird_app_loader.ready();
 }

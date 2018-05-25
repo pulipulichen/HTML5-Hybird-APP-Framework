@@ -3,9 +3,12 @@
 <html>
     <head>
         <title>TITLE</title>
+        <link rel="icon" type="image/png" href="img/icon.png" />
         <meta charset="UTF-8">
         <!-- PhoneGap -->
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="helpers/hybird-app/electron_helper.js"></script>
+        <script type="text/javascript" src="helpers/hybird-app/cordova_helper.js"></script>
         <script type="text/javascript" src="helpers/hybird-app/hybird_app_helper.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +31,7 @@
         <script src="helpers/puli-utils/puli-number-utils.js"></script>
         <script src="helpers/puli-utils/puli-ajax-utils.js"></script>
         <script src="helpers/puli-utils/puli-time-utils.js"></script>
+        <script src="helpers/puli-utils/puli-file-utils.js"></script>
 
         <script src="lib/i18n/i18n.js"></script>
         <script src="core/i18n.js"></script>
@@ -44,10 +48,10 @@
 
         
     </head>
-    <body>
+    <body class="loading">
 
         <div id="app"></div>
-        <script type="text/javascript" src="core/controller.js"></script>
-
+        <script type="text/javascript" src="core/hybird_app_loader.js"></script>
+        <script src="helpers/hybird-app/onsenui_helper.js"></script>
     </body>
 </html>

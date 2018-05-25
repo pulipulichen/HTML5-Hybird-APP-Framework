@@ -1,19 +1,18 @@
 {
   "name": "hybird-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hybird APP Framework",
   "main": "electron.js",
   "scripts": {
-    "package-win": "electron-packager . hybird-app --overwrite --ignore=node_modules/electron-* --platform=win32 --arch=x64 --version=1.0.2 --out=../electron-dist/hybird-app",
+    "package-win": "electron-packager . hybird-app --overwrite --ignore=node_modules/electron-* --platform=win32 --arch=x64 --version=1.0.0 --out=../electron-dist/hybird-app",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=img/icon.icns --prune=true --out=../electron-dist",
-    "package-linux": "electron-packager . hybird-app --overwrite --asar=true --platform=linux --arch=x64 --icon=img/icon.png --prune=true --out=release-builds",
+    "package-linux": "electron-packager . hybird-app --overwrite --asar=true --platform=linux --arch=x64 --icon=img/icon.png --prune=true --out=../electron-dist",
     "package": "asar pack hybird-app-win32-x64/resources/app hybird-app-win32-x64/resources/app.asar"
   },
   "dependencies": {
     "electron-debug": "^1.1.0",
     "electron-google-oauth": "^2.0.0",
-    "file-exists": "^2.0.0",
-    "os-tmpdir": "^1.0.2"
+    "file-exists": "^2.0.0"
   },
   "devDependencies": {
     "devtron": "^1.4.0",

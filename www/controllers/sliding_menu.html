@@ -19,12 +19,12 @@
         <!-- ---------------------------------------------- -->
 
         <v-ons-list>
-            <v-ons-list-item tappable modifier="chevron" @click="main_page.methods.switch_page(main_page)">
+            <v-ons-list-item tappable modifier="chevron" @click="onsenui_helper.switch_page(main_page)">
                 <div class="center">
                     {{ i18n.t('Main') }}
                 </div>
             </v-ons-list-item>            
-            <v-ons-list-item tappable modifier="chevron" @click="main_page.methods.switch_page(about)">
+            <v-ons-list-item tappable modifier="chevron" @click="onsenui_helper.switch_page(about)">
                 {{ i18n.t('About') }}
             </v-ons-list-item>
             <v-ons-list-item tappable modifier="chevron" 

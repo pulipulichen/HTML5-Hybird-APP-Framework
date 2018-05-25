@@ -5,7 +5,8 @@
     color: white;
 }
 #about .profile-image {
-    max-height: 290px;
+    max-height: 150px;
+    height: 150px;
     width: auto;
     border-radius: 290px;
     margin-bottom: 1rem;
