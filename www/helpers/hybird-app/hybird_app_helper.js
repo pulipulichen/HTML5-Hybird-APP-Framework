@@ -67,14 +67,18 @@ hybird_app_helper = {
                 ipcRenderer.send('save_file', _filename, JSON.stringify(_filters), _content, true);
                 break;
             case 'mobile':
-                cordova_helper.write_file(_filename, _content, _mime, function (nativePath) {
-                    try {
-                        window.plugins.socialsharing.share(_filename, _filename, nativePath);
-                    }
-                    catch (e) {
-                        alert(e);
-                    }
-                });
+                try {
+                    cordova_helper.write_file(_filename, _content, _mime, function (nativePath) {
+                        try {
+                            window.plugins.socialsharing.share(_filename, _filename, nativePath);
+                        } catch (e) {
+                            alert(e);
+                        }
+                    });
+                }
+                catch (e) {
+                    alert(e);
+                }
                 //window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
                 break;
             default:    // 'web'
