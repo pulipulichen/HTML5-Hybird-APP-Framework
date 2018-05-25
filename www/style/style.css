@@ -126,3 +126,23 @@ body.loading {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+/*
+.platform-webview ons-fab .fab__icon {
+    line-height: 3.5rem !important;
+    display: inline;
+    box-sizing: initial !important;
+}
+
+.platform-webview ons-fab .fab__icon ons-icon {
+    line-height: normal !important;
+    display: inline;
+    box-sizing: initial !important;
+}
+
+.platform-webview ons-fab {
+    line-height: normal !important;
+}
+*/
+

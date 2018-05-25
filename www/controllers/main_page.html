@@ -26,6 +26,11 @@
             {{ i18n.t("Go to next page") }}
         </v-ons-list-item>
         <v-ons-list-item>
+            <v-ons-button modifier="cta large" @click="notify_to_about">
+                {{ i18n.t("Go to About?") }}
+            </v-ons-button>
+        </v-ons-list-item>
+        <v-ons-list-item>
             <v-ons-button modifier="cta large" @click="share_json_to_ods">
                 {{ i18n.t("Share JSON to ODS") }}
             </v-ons-button>
@@ -45,7 +50,8 @@
     <v-ons-fab position="bottom right"
                class="cursor-pointer"
                ripple="ripple"
-               @click="hybird_app_helper.open_window('http://blog.pulipuli.info', 'blog')">
+               @click="hybird_app_helper.open_window('http://blog.pulipuli.info', 'blog')"
+               disable-auto-styling>
         <v-ons-icon icon="md-blogger" class="list-item__icon"></v-ons-icon>
     </v-ons-fab>
 </v-ons-page>
