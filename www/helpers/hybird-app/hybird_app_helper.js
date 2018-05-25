@@ -68,7 +68,12 @@ hybird_app_helper = {
                 break;
             case 'mobile':
                 cordova_helper.write_file(_filename, _content, _mime, function (nativePath) {
-                    window.plugins.socialsharing.share(_filename, _filename, nativePath);
+                    try {
+                        window.plugins.socialsharing.share(_filename, _filename, nativePath);
+                    }
+                    catch (e) {
+                        alert(e);
+                    }
                 });
                 //window.plugins.socialsharing.share(null, _filename, 'data:' + _mime + ';base64,' + _content, null);
                 break;
