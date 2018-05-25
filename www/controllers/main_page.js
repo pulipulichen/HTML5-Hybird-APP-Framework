@@ -4,26 +4,14 @@ main_page = {
         message: "Hello, world!"
     },
     methods: {
-        switch_page: function (_page) {
-            while (vm.$data.pageStack.length > 0) {
-                vm.$data.pageStack.pop();
-            }
-            vm.$data.pageStack.push(_page);
-            sliding_menu.methods.close();
-        },
-        push_page: function (_page) {
-            vm.$data.pageStack.push(_page);
-            sliding_menu.methods.close();
-        },
         notify_to_about: function () {
             // https://onsen.io/v2/api/vue/$ons.notification.html
-            var _this = this;
             vm.$ons.notification.confirm({
                     message: i18n.t("Are you sure to visit About?"),
                     callback: function (_result) {
                         console.log(_result);
                         if (_result === 1) {
-                            _this.switch_page(about);
+                            onsenui_helper.switch_page(about)
                         }
                     }
                 });
