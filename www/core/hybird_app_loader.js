@@ -150,7 +150,13 @@ if (hybird_app_helper.detect_mode() === "mobile") {
     document.addEventListener("deviceready",function () {
         //alert("READY 0250");
         //alert(cordova.file);
-        hybird_app_loader.ready();
+        
+        if (typeof(CONFIG.debug) !== "string") {
+            hybird_app_loader.ready();
+        }
+        else {
+            location.href = CONFIG.debug;
+        }
     }, false);
 }
 else {
