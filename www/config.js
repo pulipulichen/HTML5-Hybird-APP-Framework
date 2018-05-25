@@ -1,7 +1,7 @@
 CONFIG = {
     version: "20180525",
     //debug: "http://pulipulichen.github.io/HTML5-Hybird-APP-Framework/www/index.html",
-    debug: "http://pulipulichen.github.io/",
+    debug: "http://www.google.com.tw/",
     locale: "zh-tw",
     controllers: [
         "main_page",
