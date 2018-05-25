@@ -12,7 +12,5 @@ shell.rm("-rf", _app_dir_path);
 shell.mkdir("-p", _app_dir_path);
 shell.cp("-R", "*", _app_dir_path);
 
-shell.cd("../electron-dist/" + _app_name + "/" );
+shell.cd("../electron-dist/" + _app_name);
 exec(_app_name + ".exe");
-
-process.exit();
