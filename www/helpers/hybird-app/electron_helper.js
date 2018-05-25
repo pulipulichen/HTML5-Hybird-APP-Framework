@@ -50,4 +50,4 @@ electron_helper = {
     },
 };
 
-electron_hlper.setup_electron();
+electron_helper.setup_electron();

@@ -1,4 +1,4 @@
-cordoba_helper = {
+cordova_helper = {
     b64toBlob: function (b64Data, contentType, sliceSize) {
         contentType = contentType || '';
         sliceSize = sliceSize || 512;
