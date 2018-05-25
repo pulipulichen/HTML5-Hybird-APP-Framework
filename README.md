@@ -62,7 +62,6 @@ npm install asar
 
 請務必確認JSON格式是否正確：使用JSONLint驗證 http://jsonlint.com/
 
-
 openDevTools決定是否預設開啟偵錯工具
 
 其他參數請參照BrowserWindow的參數設定：
