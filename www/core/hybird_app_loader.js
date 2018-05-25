@@ -33,9 +33,7 @@ hybird_app_loader = {
                 _this.load_controller_template(function (_template) {
                     var _vue_setting = _this.build_vue_setting();
                     _vue_setting.template = _template;
-                    _vue_setting.create = function () {
-                        this.vue_create();
-                    };
+                    _vue_setting.created = _this.vue_create();
                     vm = new Vue(_vue_setting);
                 });
             }
