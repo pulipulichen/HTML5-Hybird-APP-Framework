@@ -78,8 +78,9 @@ module.exports = {
             //var _file_name = __dirname + "/cache/local_storage_" + _key + ".json";
             fs.exists(_file, function (_is_exists) {
                 if (_is_exists === true) {
-                    fs.readFile(_file, "utf8", function (_err, _content) {
-                        _content = new Buffer(_content).toString('base64');
+                    fs.readFile(_file, function (_err, _content) {
+                        _content = new Buffer(_content, 'binary').toString('base64');
+                        //_content = _content.toString('base64');
                         event.sender.send(_callback_id, _content);
                     });
                 } else {

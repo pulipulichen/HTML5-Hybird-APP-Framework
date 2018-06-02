@@ -48,9 +48,9 @@ vue_create_event = function () {
     var _file = "D:/Desktop/test.ods";
     //electron_helper.save_local_file(_file, _content);
     
-    electron_helper.load_local_file(_file, function (_content) {
-        xlsx_helper_open_file(_content, function (_content) {
-            alert(JSON.stringify(_content));
+    electron_helper.load_local_file(_file, function (_base64_content) {
+        xlsx_helper_open_file(_base64_content, function (_json_content) {
+            alert(JSON.stringify(_json_content));
         });
     });
     */

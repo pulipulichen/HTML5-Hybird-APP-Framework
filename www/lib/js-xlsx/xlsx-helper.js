@@ -174,13 +174,13 @@ var do_file = (function () {
 })();
 
 /**
- * 看來還是不能用...到底該怎麼做好呢...
+ * 可以用了
  * @param {type} _base64_data
  * @param {type} _callback
  * @returns {undefined}
  */
 xlsx_helper_open_file = function (_base64_data, _callback) {
-    var _mime = "application/vnd.oasis.opendocument.spreadsheet";
+    //var _mime = "application/vnd.oasis.opendocument.spreadsheet";
     //console.log(_base64_data);
     //var _blob_data = PULI_UTILS.b64toFile(_base64_data, _mime);
     //alert(JSON.stringify(_blob_data));
@@ -208,9 +208,14 @@ xlsx_helper_open_file = function (_base64_data, _callback) {
     /*
     var rABS = false;
     console.log(1);
-    process_wb(XLSX.read(_blob_data, {type: 'array'}), _callback);
+    
     console.log(2);
     */
+    //var workbook = XLSX.read(_base64_data, {type:'base64'})
+    //var workbook = XLSX.read(_base64_data.replace(/\//g, "_").replace(/\+/g, "-"), {type:'base64'})
+    //var workbook = XLSX.read(_base64_data.replace(/\//g, "_").replace(/\+/g, "-").concat('=', (4 - ( _base64_data.length % 4 ))), {type:'base64'})
+    var workbook = XLSX.read(_base64_data.replace(/_/g, "/").replace(/-/g, "+"), {type:'base64'})
+    process_wb(workbook, _callback);
 };
 
 /*
