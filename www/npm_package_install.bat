@@ -4,3 +4,5 @@ npm install electron-prebuilt -g
 npm install electron-packager --save-dev
 npm install electron-packager -g
 npm install asar
+npm install express
+npm install is-port-available

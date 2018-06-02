@@ -24,4 +24,4 @@ PULI_UTILS.b64toFile = function (b64Data, filename, contentType) {
     }
     var file = new File(byteArrays, filename, {type: contentType});
     return file;
-}
+};

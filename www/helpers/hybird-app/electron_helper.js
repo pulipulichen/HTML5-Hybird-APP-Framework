@@ -48,6 +48,19 @@ electron_helper = {
         //console.log([_callback_id, _key]);
         ipcRenderer.send('get_item', _key, _callback_id);
     },
+    save_local_file: function (_file, _content) {
+        ipcRenderer.send('save_local_file', _file, _content);
+    },
+    load_local_file: function (_file, _callback) {
+        var _callback_id = "load_local_file_" + hybird_app_helper.create_uuid();
+        ipcRenderer.on(_callback_id, function (event, _content) {
+            // 傳回來的是base64的value
+            //console.log("有回來嗎");
+            _callback(_content);
+        });
+        //console.log([_callback_id, _key]);
+        ipcRenderer.send('load_local_file', _file, _callback_id);
+    }
 };
 
 electron_helper.setup_electron();

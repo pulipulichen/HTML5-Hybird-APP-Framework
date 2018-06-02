@@ -73,5 +73,28 @@ module.exports = {
                 }
             });
         });
+        
+        ipcMain.on('load_local_file', (event, _file, _callback_id) => {
+            //var _file_name = __dirname + "/cache/local_storage_" + _key + ".json";
+            fs.exists(_file, function (_is_exists) {
+                if (_is_exists === true) {
+                    fs.readFile(_file, "utf8", function (_err, _content) {
+                        _content = new Buffer(_content).toString('base64');
+                        event.sender.send(_callback_id, _content);
+                    });
+                } else {
+                    event.sender.send(_callback_id, null);
+                }
+            });
+        });
+        
+        ipcMain.on('save_local_file', (event, _file, _content) => {
+            //var _file_name = __dirname + "/cache/local_storage_" + _key + ".json";
+            fs.exists(_file, function (_is_exists) {
+                if (_is_exists === true) {
+                    fs.writeFile(_file, _content, 'base64');
+                }
+            });
+        });
     }
 };
