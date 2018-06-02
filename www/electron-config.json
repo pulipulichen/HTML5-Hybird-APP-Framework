@@ -13,5 +13,5 @@
         "allowRunningInsecureContent": true,
         "nodeIntegration": true
     },
-    "openDevTools": true
+    "openDevTools": false
 }
