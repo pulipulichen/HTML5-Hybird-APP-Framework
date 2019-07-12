@@ -910,9 +910,9 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-braces@^1.8.2:
+braces@^2.3.1:
   version "1.8.5"
-  resolved "https://registry.yarnpkg.com/braces/-/braces-1.8.5.tgz#ba77962e12dff969d6b76711e914b737857bf6a7"
+  resolved "https://registry.yarnpkg.com/braces/-/braces-2.3.1.tgz#ba77962e12dff969d6b76711e914b737857bf6a7"
   dependencies:
     expand-range "^1.8.1"
     preserve "^0.2.0"
@@ -3153,7 +3153,7 @@ micromatch@2.3.11, micromatch@^2.1.5, micromatch@^2.3.11, micromatch@^2.3.7:
   dependencies:
     arr-diff "^2.0.0"
     array-unique "^0.2.1"
-    braces "^1.8.2"
+    braces "^2.3.1"
     expand-brackets "^0.1.4"
     extglob "^0.3.1"
     filename-regex "^2.0.0"
