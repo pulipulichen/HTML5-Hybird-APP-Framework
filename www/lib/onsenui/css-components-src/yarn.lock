@@ -1713,13 +1713,9 @@ extend-options@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/extend-options/-/extend-options-0.0.1.tgz#e93c83312438c13565e64ec2b6ce86a9829dd17b"
 
-extend@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/extend/-/extend-2.0.2.tgz#1b74985400171b85554894459c978de6ef453ab7"
-
-extend@^3.0.0, extend@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.0.tgz#5a474353b9f3353ddd8176dfd37b91c83a46f1d4"
+extend@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#1b74985400171b85554894459c978de6ef453ab7"
 
 extglob@^0.3.1:
   version "0.3.2"
@@ -4180,7 +4176,7 @@ request@2.78.0:
     qs "~6.3.0"
     stringstream "~0.0.4"
     tough-cookie "~2.3.0"
-    tunnel-agent "~0.4.1"
+    tunnel-agent "~0.6.0"
 
 request@^2.79.0:
   version "2.79.0"
@@ -4204,7 +4200,7 @@ request@^2.79.0:
     qs "~6.3.0"
     stringstream "~0.0.4"
     tough-cookie "~2.3.0"
-    tunnel-agent "~0.4.1"
+    tunnel-agent "~0.6.0"
     uuid "^3.0.0"
 
 request@~2.40.0:
@@ -4224,7 +4220,7 @@ request@~2.40.0:
     oauth-sign "~0.3.0"
     stringstream "~0.0.4"
     tough-cookie ">=0.12.0"
-    tunnel-agent "~0.4.0"
+    tunnel-agent "~0.6.0"
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -4922,9 +4918,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-tunnel-agent@~0.4.0, tunnel-agent@~0.4.1:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
+tunnel-agent@~0.6.0, tunnel-agent@~0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
@@ -5138,9 +5134,9 @@ write-file-stdout@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/write-file-stdout/-/write-file-stdout-0.0.2.tgz#c252d7c7c5b1b402897630e3453c7bfe690d9ca1"
 
-ws@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.1.tgz#082ddb6c641e85d4bb451f03d52f06eabdb1f018"
+ws@^3.3.1:
+  version "^3.3.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-3.3.1.tgz#082ddb6c641e85d4bb451f03d52f06eabdb1f018"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"
