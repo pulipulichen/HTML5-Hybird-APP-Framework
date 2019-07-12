@@ -911,7 +911,7 @@ brace-expansion@^1.1.7:
     concat-map "0.0.1"
 
 braces@^2.3.1:
-  version "1.8.5"
+  version "2.3.1"
   resolved "https://registry.yarnpkg.com/braces/-/braces-2.3.1.tgz#ba77962e12dff969d6b76711e914b737857bf6a7"
   dependencies:
     expand-range "^1.8.1"
